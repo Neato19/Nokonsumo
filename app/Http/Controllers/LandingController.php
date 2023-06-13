@@ -20,4 +20,9 @@ class LandingController extends Controller
     {
         return view('components.info-treat');
     }
+
+    public function social()
+    {
+        return view('components.social');
+    }
 }

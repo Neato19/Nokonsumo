@@ -17,6 +17,7 @@ Route::get('/', [LandingController::class, 'index'])->name('home');
 
 Route::get('map', [LandingController::class, 'map']);
 Route::get('treat', [LandingController::class, 'treat']);
+Route::get('social', [LandingController::class, 'social']);
 
 
 Route::get('post', [PostController::class, 'index']);

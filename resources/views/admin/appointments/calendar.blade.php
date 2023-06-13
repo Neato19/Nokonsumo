@@ -4,7 +4,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid/main.css" rel="stylesheet" />
 
-    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+    <main style="min-height: 35rem;" class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
         <div id='calendar'></div>
     </main>
 
@@ -16,8 +16,21 @@
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
-                    locale: 'es',
+                    customButtons: {
+                        myCustomButton: {
+                            text: 'hoy',
+                            click: function() {
+                                calendar.today();
+                            }
+                        }
+                    },
+                    headerToolbar: {
+                        right: 'myCustomButton prev,next'
+                    },
                     initialView: 'dayGridMonth',
+                    locale: 'es',
+                    today: 'hoy',
+                    hiddenDays: [0],
                     events: @json($events),
                     eventClick: function(info) {
                         location.href = "/admin/appointments/" + info.event.id + "/edit";

@@ -64,7 +64,7 @@ class AdminAppointmentController extends Controller
     {
         $appointment->delete();
 
-        return back()->with('success', 'Cita borrada correctamente');
+        return view('landing/index')->with('success', 'Cita borrada correctamente');
     }
 
     protected function validateAppointment(?Appointment $appointment = null): array

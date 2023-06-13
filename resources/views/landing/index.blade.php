@@ -103,7 +103,7 @@
 
     </style>
 
-    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+    <main class="max-w-6xl mx-auto mt-12 mb-20 lg:mt-20 space-y-6">
         <!-- Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
@@ -119,7 +119,11 @@
                     </a>
                 </div>
                 <div class="swiper-slide">
+                    @auth
                     <a href="/appointment"><img src="/images/PortadaCitas.jpg" />
+                    @else
+                    <a href="/login"><img src="/images/PortadaCitas.jpg" />
+                    @endauth
                         <div class="content">
                             <div class="landing-card-title">
                                 <h2>RESERVA</h2>

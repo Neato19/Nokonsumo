@@ -3,7 +3,11 @@
 <x-panel class="bg-gray-50">
     <article class="flex space-x-4">
         <div class="flex-shrink-0">
-            <img src="https://i.pravatar.cc/60?u={{ $comment->user_id }}" alt="" width="60" height="60" class="rounded-xl">
+            @if ($comment->author->username == 'Nokonsumo')
+                <img src="/images/nokonsumo.jpg" alt="" width="60" height="60" class="rounded-xl">
+            @else
+                <img src="/images/nokonsumo.jpg" alt="" width="60" height="60" class="rounded-xl">
+            @endif
         </div>
 
         <div>
@@ -12,7 +16,7 @@
 
                 <p class="text-xs">
                     Publicado
-                    <time>{{ $comment->created_at->format('F j, Y, g:i a') }}</time>
+                    <time>{{ $comment->created_at->diffForHumans() }}</time>
                 </p>
             </header>
 

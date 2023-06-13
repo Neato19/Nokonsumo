@@ -5,7 +5,7 @@
 
             <x-form.input nombre="Titulo" name="title" required />
             <x-form.input nombre="URL" name="slug" required />
-            <x-form.input nombre="Foto" name="thumbnail" type="file" required />
+            <x-form.input-text-white nombre="Foto" name="thumbnail" type="file" required />
             <x-form.textarea nombre="Texto" name="body" required />
 
             <x-form.field>

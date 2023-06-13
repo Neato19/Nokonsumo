@@ -5,7 +5,7 @@
                 <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
 
                 <p class="mt-4 block text-gray-400 text-xs">
-                    Publicado hace
+                    Publicado
                     <time>{{ $post->created_at->diffForHumans() }}</time>
                 </p>
 

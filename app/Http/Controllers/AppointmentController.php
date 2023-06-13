@@ -54,6 +54,8 @@ class AppointmentController extends Controller
 
         return request()->validate([
             'reserved' => 'required',
+            'telephone' => 'required',
+            'name' => 'required',
             'thumbnail' => $appointment->exists ? ['appointment'] : ['required', 'appointment']
         ]);
     }

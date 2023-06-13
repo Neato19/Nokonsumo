@@ -4,29 +4,25 @@
             @csrf
 
             <header class="flex items-center">
-                <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}"
-                     alt=""
-                     width="40"
-                     height="40"
-                     class="rounded-full">
+                @admin
+                    <img src="/images/nokonsumo.jpg" alt="" width="40" height="40" class="rounded-full">
+                @else
+                    <img src="/images/nokonsumo.jpg" alt="" width="40" height="40" class="rounded-full">
+                @endadmin
 
                 <h2 class="ml-4">¿Quieres participar?</h2>
             </header>
 
             <div class="mt-6">
-                <textarea
-                    name="body"
-                    class="w-full text-sm focus:outline-none focus:ring"
-                    rows="5"
-                    placeholder="Quick, thing of something to say!"
-                    required></textarea>
+                <textarea name="body" class="w-full p-1 text-black text-sm focus:outline-none focus:ring" rows="5"
+                    placeholder="Rápido, ¡Piensa en algo que decir!" required></textarea>
 
                 @error('body')
                     <span class="text-xs text-red-500">{{ $message }}</span>
                 @enderror
             </div>
 
-            <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
+            <div class="flex justify-end mt-6 pt-6 border-t border-gray-700">
                 <x-form.button>Enviar</x-form.button>
             </div>
         </form>

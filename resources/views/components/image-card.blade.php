@@ -16,18 +16,18 @@
                 <div class="space-x-2 lg:flex justify-between">
                     <x-icategory-button :icategory="$image->icategory" />
                     @admin
-                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="/admin/images/{{ $image->id }}/edit"
-                                class="text-xs text-blue-500 hover:text-blue-600">Editar</a>
-                        </td>
-                        <form method="POST" action="/admin/images/{{ $image->id }}">
-                            @csrf
-                            @method('DELETE')
-
-                            <button class="text-xs text-red-500">Borrar</button>
-                        </form>
-                    @endadmin
-                </div>
+                        <div class="space-x-2 lg:flex justify-between">
+                            <form method="POST" action="/admin/images/{{ $image->id }}">
+                                <a href="/admin/images/{{ $image->id }}/edit"
+                                    class="text-xs mt-1 mr-4 text-blue-500 hover:text-blue-600">Editar</a>
+                                @csrf
+                                @method('DELETE')
+    
+                                    <button class="text-xs text-red-500 hover:text-red-600">Borrar</button>
+                                </form>
+                            </div>
+                        </div>
+                @endadmin
             </header>
         </div>
     </div>

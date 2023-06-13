@@ -8,7 +8,7 @@
             <x-form.input nombre="URL" name="slug" :value="old('slug', $image->slug)" required />
 
             <div class="flex mt-6">
-                <div class="flex-1">
+                <div class="flex-1 text-white">
                     <x-form.input nombre="Foto" name="thumbnail" type="file" :value="old('thumbnail', $image->thumbnail)" />
                 </div>
 
