@@ -24,6 +24,9 @@
                     <a href="/admin/images/create" class="{{ request()->is('admin/images/create') ? 'text-blue-500' : '' }}">Subir Imagen</a>
                 </li>
                 <li>
+                    <a href="/admin/appointments/create" class="{{ request()->is('admin/appointments') ? 'text-blue-500' : '' }}">Crear cita</a>
+                </li>
+                <li>
                     <a href="/admin/appointments" class="{{ request()->is('admin/appointments') ? 'text-blue-500' : '' }}">Calendario</a>
                 </li>
             </ul>

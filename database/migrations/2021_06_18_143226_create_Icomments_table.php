@@ -13,7 +13,7 @@ class CreateIcommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Icomments', function (Blueprint $table) {
+        Schema::create('icomments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('image_id')->constrained()->cascadeOnDelete();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
@@ -29,6 +29,6 @@ class CreateIcommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Icomments');
+        Schema::dropIfExists('icomments');
     }
 }

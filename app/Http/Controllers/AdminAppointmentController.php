@@ -29,17 +29,14 @@ class AdminAppointmentController extends Controller
 
     public function create()
     {
-        return view('admin.appointment.create');
+        return view('admin.appointments.create');
     }
 
     public function store()
     {
-        Appointment::create(array_merge($this->validateAppointment(), [
-            'user_id' => request()->user()->id,
-            'thumbnail' => request()->file('thumbnail')->store('thumbnails')
-        ]));
+        Appointment::create(array_merge($this->validateAppointment()));
 
-        return redirect('calendar');
+        return back()->with('success', 'Cita creada');
     }
 
     public function edit(Appointment $appointment)
@@ -73,8 +70,8 @@ class AdminAppointmentController extends Controller
 
         return request()->validate([
             'start_time' => 'required',
-            'finish_time' => 'required',
-            'thumbnail' => $appointment->exists ? ['appointment'] : ['required', 'appointment']
+            'finish_time' => 'required'
+            // 'thumbnail' => $appointment->exists ? ['appointment'] : ['required', 'appointment']
         ]);
     }
 }
