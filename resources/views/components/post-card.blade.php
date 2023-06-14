@@ -21,7 +21,7 @@
                     </h1>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                        Publicado el <time>{{ $post->created_at->diffForHumans() }}</time>
+                        Publicado <time>{{ $post->created_at->diffForHumans() }}</time>
                     </span>
                 </div>
             </header>
